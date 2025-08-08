@@ -14,12 +14,12 @@ contract NusaPayScript is Script {
     uint256 public ORIGIN_CHAIN_ID = 1114;
 
     // ***************************** FILL THIS ************************************************************
-    uint256 public DESTINATION_CHAIN_ID = 421614;
+    uint256 public DESTINATION_CHAIN_ID = 5115;
 
-    address public ORIGIN_mailbox = address(0);
-    address public ORIGIN_interchainGasPaymaster = address(0);
+    address public ORIGIN_mailbox = 0x884523a72A455B533A9c1A07E49a088E34E2AB33;
+    address public ORIGIN_interchainGasPaymaster = 0x9C4C2fdfD583Bd1FCC6387dB6129dE0D9E1B4d4D;
 
-    address public DESTINATION_mailbox = address(0);
+    address public DESTINATION_mailbox = 0x850a53a71980B6447E8d34A40094Dd9bDC743e94;
     address public DESTINATION_receiverBridge = address(0);
     // ****************************************************************************************************
 
@@ -29,9 +29,10 @@ contract NusaPayScript is Script {
 
 
         // DESTINATION chain
-        vm.createSelectFork(vm.rpcUrl("arb_sepolia"));
+        // vm.createSelectFork(vm.rpcUrl("arb_sepolia"));
         // vm.createSelectFork(vm.rpcUrl("base_sepolia"));
         // vm.createSelectFork(vm.rpcUrl("op_sepolia"));
+        // vm.createSelectFork(vm.rpcUrl("citrea_testnet"));
     }
 
     function run() public {

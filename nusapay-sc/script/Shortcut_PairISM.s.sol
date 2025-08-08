@@ -9,25 +9,25 @@ interface IAccountRouter {
 
 contract ShortcutPairBridgeScript is Script {
     // ******* CORE_TESTNET
-    address public CORE_TESTNET_MAILBOX = 0x9742b159089D7626B63a31011e8f9ed485e7C0DF;
+    address public CORE_TESTNET_MAILBOX = 0x884523a72A455B533A9c1A07E49a088E34E2AB33;
     uint32 public CORE_TESTNET_DOMAIN = 1114;
-    address public CORE_TESTNET_ACCOUNT_ROUTER = 0xC8f07759937E7AC9053054E6c87C0f8548DBAa6B;
-    address public CORE_TESTNET_ISM = 0x71255D53FA7C96011DCd2503c0857a99c60a9bF9;
+    address public CORE_TESTNET_ACCOUNT_ROUTER = 0x9C4C2fdfD583Bd1FCC6387dB6129dE0D9E1B4d4D;
+    address public CORE_TESTNET_ISM = 0x970A7cf028456244C7ab6a5F32e88B77B24B3BD6;
 
     // ******* ARBITRUM_SEPOLIA
-    address public ARB_SEPOLIA_MAILBOX = 0x9EF2854894C0436cB4107f6dc43ee82b7cB1DB6D;
-    uint32 public ARB_SEPOLIA_DOMAIN = 421614;
-    address public ARB_SEPOLIA_ACCOUNT_ROUTER = 0x29Fc20a600B2392b8b659CBD47eAcA44F9Fb71B0;
-    address public ARB_SEPOLIA_ISM = 0x4a52F0EeE5395D16DD7872678f402AA57D639969;
+    address public CITREA_TESTNET_MAILBOX = 0x850a53a71980B6447E8d34A40094Dd9bDC743e94;
+    uint32 public CITREA_TESTNET_DOMAIN = 5115;
+    address public CITREA_TESTNET_ACCOUNT_ROUTER = 0x62153FAB3B7F9131D987CBEC8c53d76047Dfdd70;
+    address public CITREA_TESTNET_ISM = 0x33b6C9aa2f33088a27CE848b48CC61C379c0197c;
 
     // ******* DESTINATION_CHAIN_DOMAIN
     // ** Deploy hyperlane on new chain
-    address public DESTINATION_CHAIN_MAILBOX = ARB_SEPOLIA_MAILBOX;
-    uint32 public DESTINATION_CHAIN_DOMAIN = ARB_SEPOLIA_DOMAIN;
-    address public DESTINATION_CHAIN_ACCOUNT_ROUTER = ARB_SEPOLIA_ACCOUNT_ROUTER;
-    address public DESTINATION_CHAIN_ISM = ARB_SEPOLIA_ISM;
+    address public DESTINATION_CHAIN_MAILBOX = CITREA_TESTNET_MAILBOX;
+    uint32 public DESTINATION_CHAIN_DOMAIN = CITREA_TESTNET_DOMAIN;
+    address public DESTINATION_CHAIN_ACCOUNT_ROUTER = CITREA_TESTNET_ACCOUNT_ROUTER;
+    address public DESTINATION_CHAIN_ISM = CITREA_TESTNET_ISM;
 
-    uint256 public currentChainId = 421614;
+    uint256 public currentChainId = 5115;
 
     function setUp() public {
         // source chain
@@ -35,7 +35,8 @@ contract ShortcutPairBridgeScript is Script {
 
         // destination chain
         // vm.createSelectFork(vm.rpcUrl("base_sepolia"));
-        vm.createSelectFork(vm.rpcUrl("arb_sepolia"));
+        // vm.createSelectFork(vm.rpcUrl("arb_sepolia"));
+        vm.createSelectFork(vm.rpcUrl("citrea_testnet"));
     }
 
     function run() public payable {
