@@ -4,13 +4,13 @@ pragma solidity ^0.8.20;
 import "@openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
 
 /**
- * @title MockIDRX
- * @dev Mock IDRX token with 2 decimals for testing
+ * @title MockUSDC
+ * @dev Mock USDC token with 6 decimals for testing
  */
-contract MockIDRX is ERC20 {
-    uint8 private constant DECIMALS = 2;
+contract MockUSDC is ERC20 {
+    uint8 private constant DECIMALS = 6;
     
-    constructor() ERC20("Mock IDRX", "IDRX") {}
+    constructor() ERC20("Mock USDC", "USDC") {}
     
     function decimals() public view virtual override returns (uint8) {
         return DECIMALS;
@@ -23,4 +23,4 @@ contract MockIDRX is ERC20 {
     function burn(address from, uint256 amount) external {
         _burn(from, amount);
     }
-}
+} 

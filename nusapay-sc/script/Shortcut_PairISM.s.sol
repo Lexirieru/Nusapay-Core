@@ -9,34 +9,39 @@ interface IAccountRouter {
 
 contract ShortcutPairBridgeScript is Script {
     // ******* CORE_TESTNET
-    address public CORE_TESTNET_MAILBOX = 0x884523a72A455B533A9c1A07E49a088E34E2AB33;
+    address public CORE_TESTNET_MAILBOX = 0xd5b993dB69c2263086C88870b47eec787b5427B8;
     uint32 public CORE_TESTNET_DOMAIN = 1114;
-    address public CORE_TESTNET_ACCOUNT_ROUTER = 0x9C4C2fdfD583Bd1FCC6387dB6129dE0D9E1B4d4D;
-    address public CORE_TESTNET_ISM = 0x970A7cf028456244C7ab6a5F32e88B77B24B3BD6;
+    address public CORE_TESTNET_ACCOUNT_ROUTER = 0x4eAD9ce51e740277ac070ec84914dE614D20036c;
+    address public CORE_TESTNET_ISM = 0x92F716054dd0dD9aa8939A220022B275f090758a;
 
-    // ******* ARBITRUM_SEPOLIA
-    address public CITREA_TESTNET_MAILBOX = 0x850a53a71980B6447E8d34A40094Dd9bDC743e94;
-    uint32 public CITREA_TESTNET_DOMAIN = 5115;
-    address public CITREA_TESTNET_ACCOUNT_ROUTER = 0x62153FAB3B7F9131D987CBEC8c53d76047Dfdd70;
-    address public CITREA_TESTNET_ISM = 0x33b6C9aa2f33088a27CE848b48CC61C379c0197c;
+    // ******* BASE_SEPOLIA
+    address public BASE_SEPOLIA_MAILBOX = 0xFBD43c6039f8EB2eE6C2Cc3CD2DAAE985E564508;
+    uint32 public BASE_SEPOLIA_DOMAIN = 84532;
+    address public BASE_SEPOLIA_ACCOUNT_ROUTER = 0xff0A4f733B2cF5f8C7869e42f3D92f54226BdE0A;
+    address public BASE_SEPOLIA_ISM = 0x7a2Beacdfc0FA044264CF103500Fe6eD15193b58;
 
     // ******* DESTINATION_CHAIN_DOMAIN
     // ** Deploy hyperlane on new chain
-    address public DESTINATION_CHAIN_MAILBOX = CITREA_TESTNET_MAILBOX;
-    uint32 public DESTINATION_CHAIN_DOMAIN = CITREA_TESTNET_DOMAIN;
-    address public DESTINATION_CHAIN_ACCOUNT_ROUTER = CITREA_TESTNET_ACCOUNT_ROUTER;
-    address public DESTINATION_CHAIN_ISM = CITREA_TESTNET_ISM;
+    address public DESTINATION_CHAIN_MAILBOX = BASE_SEPOLIA_MAILBOX;
+    uint32 public DESTINATION_CHAIN_DOMAIN = BASE_SEPOLIA_DOMAIN;
+    address public DESTINATION_CHAIN_ACCOUNT_ROUTER = BASE_SEPOLIA_ACCOUNT_ROUTER;
+    address public DESTINATION_CHAIN_ISM = BASE_SEPOLIA_ISM;
 
-    uint256 public currentChainId = 5115;
+    uint256 public currentChainId = 84532;
 
     function setUp() public {
         // source chain
-        // vm.createSelectFork(vm.rpcUrl("core_testnet"));
+        vm.createSelectFork(vm.rpcUrl("core_testnet"));
+        // vm.createSelectFork(vm.rpcUrl("arb_sepolia"));
+        // vm.createSelectFork(vm.rpcUrl("base_sepolia"));
+
 
         // destination chain
         // vm.createSelectFork(vm.rpcUrl("base_sepolia"));
+        // vm.createSelectFork(vm.rpcUrl("core_testnet"));
         // vm.createSelectFork(vm.rpcUrl("arb_sepolia"));
-        vm.createSelectFork(vm.rpcUrl("citrea_testnet"));
+        // vm.createSelectFork(vm.rpcUrl("citrea_testnet"));
+        // vm.createSelectFork(vm.rpcUrl("bitlayer_testnet"));
     }
 
     function run() public payable {

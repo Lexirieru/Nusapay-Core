@@ -7,21 +7,23 @@ import {IMint} from "../src/interfaces/IMint.sol";
 
 contract ShortcutBridge is Script {
     // *** FILL THIS
-    uint256 amount = 10e2;
-    address token = 0x4C1cA3C06ff0AFA986B68FF4C75b3357E6AB0D2A;
+    uint256 amount = 50e2;
+    address token = 0xCC05F0283a1ce1d8759dc025094a478515586feE;
 
     // CORE -> ARB
-    address bridgeTokenSender = 0xC9479F89fA8fcb9035A97e83B7Ae2A232f7560fc;
-    address myWallet = 0xa5ea1Cb1033F5d3BD207bF6a2a2504cF1c3e9F42;
+    address bridgeTokenSender = 0x1B7c2e50803F2E8E0181c8CFe63Df42F223DF0Ef;
+    address myWallet = 0xBB241303F947f6E223CA400aECEe04693e854b44;
     // ***
     function setUp() public {
         vm.createSelectFork(vm.rpcUrl("core_testnet"));
+        // vm.createSelectFork(vm.rpcUrl("arb_sepolia"));
+        // vm.createSelectFork(vm.rpcUrl("base_sepolia"));
     }
 
     function run() public {
         uint256 privateKey = vm.envUint("PRIVATE_KEY");
         vm.startBroadcast(privateKey);
-        IMint(token).mint(myWallet, 20e2);
+        IMint(token).mint(myWallet, 100e2); 
 
         IERC20(token).approve(bridgeTokenSender, amount);
         IBridgeTokenSender(bridgeTokenSender).bridge(amount, myWallet, token);

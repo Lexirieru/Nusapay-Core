@@ -11,28 +11,33 @@ contract NusaPayScript is Script {
     BridgeTokenSender public bridgeTokenSender;
     BridgeTokenReceiver public bridgeTokenReceiver;
 
-    uint256 public ORIGIN_CHAIN_ID = 1114;
+    uint256 public ORIGIN_CHAIN_ID = 84532;
 
     // ***************************** FILL THIS ************************************************************
-    uint256 public DESTINATION_CHAIN_ID = 5115;
+    uint256 public DESTINATION_CHAIN_ID = 1114;
 
-    address public ORIGIN_mailbox = 0x884523a72A455B533A9c1A07E49a088E34E2AB33;
-    address public ORIGIN_interchainGasPaymaster = 0x9C4C2fdfD583Bd1FCC6387dB6129dE0D9E1B4d4D;
+    address public ORIGIN_mailbox = 0xFBD43c6039f8EB2eE6C2Cc3CD2DAAE985E564508;
+    address public ORIGIN_interchainGasPaymaster = 0xff0A4f733B2cF5f8C7869e42f3D92f54226BdE0A;
 
-    address public DESTINATION_mailbox = 0x850a53a71980B6447E8d34A40094Dd9bDC743e94;
-    address public DESTINATION_receiverBridge = address(0);
+    address public DESTINATION_mailbox = 0xd5b993dB69c2263086C88870b47eec787b5427B8;
+    address public DESTINATION_receiverBridge = 0xe620e02241201F4b5148447BF20D4b6a2EffE026;
     // ****************************************************************************************************
 
     function setUp() public {
         // ORIGIN chain (core)
-        vm.createSelectFork(vm.rpcUrl("core_testnet"));
+        // vm.createSelectFork(vm.rpcUrl("core_testnet"));
+        // vm.createSelectFork(vm.rpcUrl("arb_sepolia"));
+        vm.createSelectFork(vm.rpcUrl("base_sepolia"));
+
 
 
         // DESTINATION chain
         // vm.createSelectFork(vm.rpcUrl("arb_sepolia"));
+        // vm.createSelectFork(vm.rpcUrl("core_testnet"));
         // vm.createSelectFork(vm.rpcUrl("base_sepolia"));
         // vm.createSelectFork(vm.rpcUrl("op_sepolia"));
         // vm.createSelectFork(vm.rpcUrl("citrea_testnet"));
+        // vm.createSelectFork(vm.rpcUrl("bitlayer_testnet"));
     }
 
     function run() public {
@@ -52,7 +57,7 @@ contract NusaPayScript is Script {
 
             console.log("Deployment to", block.chainid);
             console.log("bridgeTokenSender", address(bridgeTokenSender));
-            console.log("mockUSDC", address(mockIDRX));
+            console.log("mockIDRX", address(mockIDRX));
         } else if (block.chainid == DESTINATION_CHAIN_ID) {
             // deploy token
             mockIDRX = new MockIDRX();
@@ -61,7 +66,7 @@ contract NusaPayScript is Script {
 
             console.log("Deployment to", block.chainid);
             console.log("bridgeTokenReceiver", address(bridgeTokenReceiver));
-            console.log("mockUSDC", address(mockIDRX));
+            console.log("mockIDRX", address(mockIDRX));
         }
         vm.stopBroadcast();
     }
