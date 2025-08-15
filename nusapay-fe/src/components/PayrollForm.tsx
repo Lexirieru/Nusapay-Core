@@ -17,6 +17,10 @@ interface Employee {
   bankAccount: string
 }
 
+interface PayrollFormProps {
+  onSuccess: (details: any) => void;
+}
+
 // Static exchange rate: 1 USDC = 16400 IDR
 const USDC_TO_IDR_RATE = 16400
 
@@ -40,7 +44,7 @@ const INDONESIAN_BANKS = [
   { code: 'OTHER', name: 'Other Bank' }
 ]
 
-export function PayrollForm() {
+export function PayrollForm({ onSuccess }: PayrollFormProps) {
   const { address } = useAccount()
   const { owner } = useOriginPayroll()
   const { executePayroll, isLoading: isExecuting } = useExecutePayroll()
@@ -60,8 +64,6 @@ export function PayrollForm() {
 
   const [gasPayment] = useState('0')
   const [isTransferring, setIsTransferring] = useState(false)
-  const [isSuccess, setIsSuccess] = useState(false)
-  const [successDetails, setSuccessDetails] = useState<any>(null)
 
   // Check if user is owner
   const isOwner = address && owner && address.toLowerCase() === owner.toLowerCase()
@@ -126,8 +128,6 @@ export function PayrollForm() {
   const handleExecutePayroll = async () => {
     try {
       setIsTransferring(true)
-      setIsSuccess(false)
-      setSuccessDetails(null)
 
       // Step 1: Approve USDC first
       const totalAmount = totalCryptoAmount * 1e6
@@ -153,8 +153,8 @@ export function PayrollForm() {
       // Simulate 3 second loading
       await new Promise(resolve => setTimeout(resolve, 3000))
 
-      // Set success details
-      setSuccessDetails({
+      // Set success details and call the onSuccess callback
+      const successDetails = {
         transactionHash: result?.hash || 'N/A',
         totalAmount: totalCryptoAmount,
         employeeCount: employees.length,
@@ -167,10 +167,10 @@ export function PayrollForm() {
           bank: `${emp.bankName}:${emp.bankAccount}`
         })),
         timestamp: new Date().toLocaleString()
-      })
-
+      }
+      
+      onSuccess(successDetails);
       setIsTransferring(false)
-      setIsSuccess(true)
       
     } catch (error) {
       console.error('Error in payroll execution:', error)
@@ -424,145 +424,7 @@ export function PayrollForm() {
             )}
           </AnimatePresence>
         </div>
-
-        {/* Success Message */}
-        <AnimatePresence>
-          {isSuccess && successDetails && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: -20 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="mt-6 bg-green-900/30 border border-green-500/30 rounded-lg p-6 backdrop-blur-sm"
-            >
-              <motion.div 
-                className="flex items-center mb-4"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-              >
-                <motion.div 
-                  className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
-                >
-                  <motion.svg 
-                    className="w-5 h-5 text-white" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ delay: 0.5, duration: 0.5 }}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </motion.svg>
-                </motion.div>
-                <motion.h3 
-                  className="text-xl font-semibold text-green-400"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.4, duration: 0.5 }}
-                >
-                  Payroll Executed Successfully!
-                </motion.h3>
-              </motion.div>
-            
-              <motion.div 
-                className="space-y-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.5 }}
-              >
-                <motion.div 
-                  className="grid grid-cols-1 md:grid-cols-2 gap-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.7, duration: 0.5 }}
-                >
-                  <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.8, duration: 0.3 }}
-                  >
-                    <p className="text-sm text-green-300">Transaction Hash</p>
-                    <p className="text-white font-mono text-sm break-all">{successDetails.transactionHash}</p>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.9, duration: 0.3 }}
-                  >
-                    <p className="text-sm text-green-300">Total Amount</p>
-                    <p className="text-white font-semibold">{successDetails.totalAmount} USDC</p>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 1.0, duration: 0.3 }}
-                  >
-                    <p className="text-sm text-green-300">Employee Count</p>
-                    <p className="text-white font-semibold">{successDetails.employeeCount} employees</p>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 1.1, duration: 0.3 }}
-                  >
-                    <p className="text-sm text-green-300">Timestamp</p>
-                    <p className="text-white">{successDetails.timestamp}</p>
-                  </motion.div>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.2, duration: 0.5 }}
-                >
-                  <motion.h4 
-                    className="text-green-300 font-semibold mb-2"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.3, duration: 0.3 }}
-                  >
-                    Employee Details:
-                  </motion.h4>
-                  <div className="space-y-2">
-                    {successDetails.employees.map((emp: any, index: number) => (
-                      <motion.div 
-                        key={index} 
-                        className="bg-gray-800/50 rounded p-3"
-                        initial={{ opacity: 0, x: -20, scale: 0.95 }}
-                        animate={{ opacity: 1, x: 0, scale: 1 }}
-                        transition={{ 
-                          delay: 1.4 + (index * 0.1), 
-                          duration: 0.4,
-                          type: "spring",
-                          stiffness: 100
-                        }}
-                        whileHover={{ scale: 1.02 }}
-                      >
-                        <div className="flex justify-between items-start">
-                          <div>
-                            <p className="text-white font-medium">{emp.name}</p>
-                            <p className="text-gray-300 text-sm">{emp.address}</p>
-                            <p className="text-cyan-300 text-sm">{emp.bank}</p>
-                          </div>
-                          <div className="text-right">
-                            <p className="text-white font-semibold">{emp.usdcAmount} USDC</p>
-                            <p className="text-gray-300 text-sm">{emp.fiatAmount} {emp.currency}</p>
-                          </div>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     </div>
   )
-} 
+}
