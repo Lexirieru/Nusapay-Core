@@ -225,7 +225,7 @@ contract Shortcut_Payroll is Script {
         
         // Load existing deployed OriginPayroll contract
         if (address(originPayroll) == address(0)) {
-            originPayroll = OriginPayroll(0x32D379bCa1547dD716Dd87f08AdaE4D140ef96Fd);
+            originPayroll = OriginPayroll(0x63719d58c13AbaDad02d5390c7f83082F51De805);
             console.log("Loaded existing OriginPayroll at:", address(originPayroll));
         }
         

@@ -15,7 +15,7 @@ contract Shortcut_PayrollEnrollment is Script {
     address public CORE_TESTNET_MAILBOX = 0xA948C6025FfCe453e359f72FAfc916F586e0BF26;
     uint32 public CORE_TESTNET_DOMAIN = 1114;
     address public CORE_TESTNET_ACCOUNT_ROUTER = 0x5558306914971922B959bAe5d7A2424FCD40230f;
-    address public CORE_TESTNET_ISM = 0xde8D27a0FBF17E3AD2c3A88e0530Bb99E22ED2D6;
+    address public CORE_TESTNET_ISM = 0x8Bc6a16771BA6cfD6FE80b2262AFe48Ce595CDeF;
 
     // ******* BASE_SEPOLIA
     address public BASE_SEPOLIA_MAILBOX = 0x80AA79da4F080Dbcdab8609C1A4DA20574A9Aa48;
@@ -24,18 +24,18 @@ contract Shortcut_PayrollEnrollment is Script {
     address public BASE_SEPOLIA_ISM = 0xFCD8a6b6C050C28eCc43E80b13454dedBa5A49EB;
 
     // ******* PAYROLL CONTRACTS
-    address public ORIGIN_PAYROLL = 0x9e2F95f2514B6da2BfD82eb615d867909EFECd4d; // Core Testnet
-    address public DESTINATION_PAYROLL = 0x167445859606bd51a9e734503e4708ce7Bd060ac; // Base Sepolia
+    address public ORIGIN_PAYROLL = 0x63719d58c13AbaDad02d5390c7f83082F51De805; // Core Testnet
+    address public DESTINATION_PAYROLL = 0x427c51B501c73a1cB458Ea38235e631850d2BD31; // Base Sepolia
     
     // ******* TOKEN ADDRESSES
-    address public CORE_USDC = 0x9e5967F25211e058fB73D98eB7D315C3c9f85b82; // Core Testnet
-    address public CORE_IDRX = 0x36f381aF59D0231B903eFd1F8Fa444B5E082255C; // Core Testnet
-    address public BASE_USDC = 0x9206D261BAe50abEFa751624ce6033a0b40Fbc23; // Base Sepolia
+    address public CORE_USDC = 0x3dBFCF9B63F77125351866b7F2B027908810b4C0; // Core Testnet
+    address public CORE_IDRX = 0x16C6dc8220e61EDeba67758062B53b22366DA0c1; // Core Testnet
+    address public BASE_USDC = 0x32D379bCa1547dD716Dd87f08AdaE4D140ef96Fd; // Base Sepolia
 
     function setUp() public {
         // Uncomment the chain you want to work on
-        vm.createSelectFork(vm.rpcUrl("core_testnet"));
-        // vm.createSelectFork(vm.rpcUrl("base_sepolia"));
+        // vm.createSelectFork(vm.rpcUrl("core_testnet"));
+        vm.createSelectFork(vm.rpcUrl("base_sepolia"));
     }
 
     function run() public payable {

@@ -8,10 +8,10 @@ import {IMint} from "../src/interfaces/IMint.sol";
 contract ShortcutBridge is Script {
     // *** FILL THIS
     uint256 amount = 50e2;
-    address token = 0xCC05F0283a1ce1d8759dc025094a478515586feE;
+    address token = 0xD5B6d15dcDfCF954C2a84664a73e990cefe9C03D;
 
     // CORE -> ARB
-    address bridgeTokenSender = 0x1B7c2e50803F2E8E0181c8CFe63Df42F223DF0Ef;
+    address bridgeTokenSender = 0x17E52AEA0dC9eB8795Ee314b927208158c8867bB;
     address myWallet = 0xBB241303F947f6E223CA400aECEe04693e854b44;
     // ***
     function setUp() public {
