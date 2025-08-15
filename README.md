@@ -11,39 +11,39 @@
 
 ## What is NusaPay
 
-NusaPay is a permissionless cross-border payment protocol built on Etherlink. It is designed to provide a fast, affordable, and seamless decentralized experience for international payroll and remittances across multiple blockchain environments.
+NusaPay is a permissionless cross-border payment protocol built on Core. It is designed to provide a fast, affordable, and seamless decentralized experience for international payroll and remittances across multiple blockchain environments.
 
 Key components include:
 
-* [**Etherlink**](https://www.etherlink.com/), a fast and cost-efficient Layer 2 solution for our core operations.
+* [**Core**](https://www.Core.com/), a fast and cost-efficient Layer 2 solution for our core operations.
 * [**Hyperlane**](https://app.gitbook.com/o/aUZYAMWOkaDjYCNxvVS6/s/k7kvMqvlkCQWT9DUslOu/), used for trustless cross-chain messaging and secure asset movement.
 
 ***
 
 ## Key Features
 
-* **Near-Zero Fees:** NusaPay leverages the low-cost environment of [**Etherlink**](https://www.etherlink.com/). Our mass payroll transactions are confirmed quickly and cost just a fraction of typical gas fees, making global payments highly economical.
+* **Near-Zero Fees:** NusaPay leverages the low-cost environment of [**Core**](https://www.Core.com/). Our mass payroll transactions are confirmed quickly and cost just a fraction of typical gas fees, making global payments highly economical.
 * **Permissionless:** Built on Web3 principles, NusaPay allows anyone to use its services without requiring administrative keys or centralized controls, ensuring full transparency and user sovereignty.
-* **Fast Cross-Chain Interoperability:** NusaPay enables seamless cross-chain interactions using [**Hyperlane**](https://app.gitbook.com/o/aUZYAMWOkaDjYCNxvVS6/s/k7kvMqvlkCQWT9DUslOu/) for secure, decentralized communication between blockchains, allowing us to move funds from any supported chain to [**Etherlink**](https://www.etherlink.com/) for processing.
+* **Fast Cross-Chain Interoperability:** NusaPay enables seamless cross-chain interactions using [**Hyperlane**](https://app.gitbook.com/o/aUZYAMWOkaDjYCNxvVS6/s/k7kvMqvlkCQWT9DUslOu/) for secure, decentralized communication between blockchains, allowing us to move funds from any supported chain to [**Core**](https://www.Core.com/) for processing.
 * **Direct-to-Bank Payouts:** We bridge the on-chain and off-chain worlds by converting digital assets into local fiat currencies and depositing them directly into the recipient's bank account.
 
 ***
 
-## Why Built on Etherlink?
+## Why Built on Core?
 
-NusaPay is built on Etherlink, an EVM-compatible, non-custodial Layer 2 blockchain powered by Tezos Smart Rollup technology. Etherlink was chosen for its exceptional performance, developer experience, and strong security guarantees, all of which are essential for a reliable cross-border payment platform.
+NusaPay is built on Core, an EVM-compatible, non-custodial Layer 2 blockchain powered by Tezos Smart Rollup technology. Core was chosen for its exceptional performance, developer experience, and strong security guarantees, all of which are essential for a reliable cross-border payment platform.
 
 ***
 
-### What is Etherlink?
+### What is Core?
 
-Etherlink enables seamless integration with Ethereum tools such as wallets and indexers, and allows fast asset transfers to and from other EVM-compatible chains.
+Core enables seamless integration with Ethereum tools such as wallets and indexers, and allows fast asset transfers to and from other EVM-compatible chains.
 
-Built on the Tezos Layer 1, Etherlink offers a fast, fair, and (nearly) free environment for DeFi protocols and applications.
+Built on the Tezos Layer 1, Core offers a fast, fair, and (nearly) free environment for DeFi protocols and applications.
 
-* **Fast Confirmation:** Etherlink provides low-latency confirmations under 500 milliseconds, allowing for real-time user experiences. By leveraging Tezos's 2-block finality and the speed of Smart Rollups, Etherlink ensures both fast and secure transaction execution. For NusaPay, this is critical for rapid processing of mass payments.
-* **Fair and Open Governance:** Etherlink governance integrates with Tezos’s permissionless fraud-proof mechanisms. Participation is open to anyone, ensuring transparency and fairness without administrative keys or centralized controls. Users retain full control of their assets, reducing the risk of censorship or manipulation.
-* **Low Transaction Costs:** Etherlink drastically reduces transaction costs by using enshrined Smart Rollups. This architecture supports scalable application development without cost barriers, making it the perfect foundation for NusaPay's high-volume mass payroll transactions.
+* **Fast Confirmation:** Core provides low-latency confirmations under 500 milliseconds, allowing for real-time user experiences. By leveraging Tezos's 2-block finality and the speed of Smart Rollups, Core ensures both fast and secure transaction execution. For NusaPay, this is critical for rapid processing of mass payments.
+* **Fair and Open Governance:** Core governance integrates with Tezos’s permissionless fraud-proof mechanisms. Participation is open to anyone, ensuring transparency and fairness without administrative keys or centralized controls. Users retain full control of their assets, reducing the risk of censorship or manipulation.
+* **Low Transaction Costs:** Core drastically reduces transaction costs by using enshrined Smart Rollups. This architecture supports scalable application development without cost barriers, making it the perfect foundation for NusaPay's high-volume mass payroll transactions.
 
 ***
 
@@ -89,19 +89,19 @@ NusaPay is the bridge needed to solve the cross-border payment problem in the di
 
 ### **Direct and Automated Bridge**
 
-We create a direct and trustless bridge from digital assets (such as USDC) to local fiat currencies. The entire process, from a company sending funds to an employee receiving them in their bank account, is automated via smart contracts deployed on Etherlink.
+We create a direct and trustless bridge from digital assets (such as USDC) to local fiat currencies. The entire process, from a company sending funds to an employee receiving them in their bank account, is automated via smart contracts deployed on Core.
 
 ***
 
 ### **Efficiency and Low Costs**
 
-By leveraging Etherlink's near-zero gas fees and extremely fast transaction confirmations, NusaPay enables mass payments that are significantly more economical and rapid. We eliminate unnecessary intermediaries, ensuring employees receive their full intended salary.
+By leveraging Core's near-zero gas fees and extremely fast transaction confirmations, NusaPay enables mass payments that are significantly more economical and rapid. We eliminate unnecessary intermediaries, ensuring employees receive their full intended salary.
 
 ***
 
 ### **Full Transparency and Interoperability**
 
-Every transaction is recorded transparently on the blockchain. We use Hyperlane as our interoperability protocol to ensure digital assets can move securely and efficiently from other blockchains to Etherlink, guaranteeing flexibility and connectivity.
+Every transaction is recorded transparently on the blockchain. We use Hyperlane as our interoperability protocol to ensure digital assets can move securely and efficiently from other blockchains to Core, guaranteeing flexibility and connectivity.
 
 ***
 
@@ -121,7 +121,7 @@ By combining the power of Web3 with traditional banking integration, NusaPay not
 
 # Hyperlane
 
-**Hyperlane** serves as our core cross-chain interoperability protocol, providing a crucial layer of connectivity for NusaPay. It is a permissionless and open-source messaging standard that enables our smart contracts on Etherlink to securely communicate with and move assets from any other supported blockchain. For NusaPay, this is vital for the mass payroll process. It ensures that an employer can initiate a payment using USDC from any chain they prefer, and Hyperlane will handle the trustless transfer of these assets to our processing environment on Etherlink. This eliminates the need for vulnerable, centralized bridges and provides the flexibility required for a truly global payment platform.
+**Hyperlane** serves as our core cross-chain interoperability protocol, providing a crucial layer of connectivity for NusaPay. It is a permissionless and open-source messaging standard that enables our smart contracts on Core to securely communicate with and move assets from any other supported blockchain. For NusaPay, this is vital for the mass payroll process. It ensures that an employer can initiate a payment using USDC from any chain they prefer, and Hyperlane will handle the trustless transfer of these assets to our processing environment on Core. This eliminates the need for vulnerable, centralized bridges and provides the flexibility required for a truly global payment platform.
 
 ***
 
@@ -133,13 +133,13 @@ By combining the power of Web3 with traditional banking integration, NusaPay not
 
 # Thirdweb
 
-**Thirdweb** is our strategic choice to accelerate the development and deployment of NusaPay's smart contracts. It offers a comprehensive suite of developer tools, including easy-to-use SDKs and a library of pre-built, production-ready smart contracts. By leveraging Thirdweb, our development team can abstract away much of the boilerplate code and focus entirely on building NusaPay's unique business logic—such as the complex payroll orchestration and our on-chain to off-chain payout mechanisms. This streamlined developer experience is particularly valuable for a fast-paced project like ours, enabling us to innovate and iterate rapidly on **Etherlink**.
+**Thirdweb** is our strategic choice to accelerate the development and deployment of NusaPay's smart contracts. It offers a comprehensive suite of developer tools, including easy-to-use SDKs and a library of pre-built, production-ready smart contracts. By leveraging Thirdweb, our development team can abstract away much of the boilerplate code and focus entirely on building NusaPay's unique business logic—such as the complex payroll orchestration and our on-chain to off-chain payout mechanisms. This streamlined developer experience is particularly valuable for a fast-paced project like ours, enabling us to innovate and iterate rapidly on **Core**.
 
 ***
 
 # Goldsky
 
-**Goldsky** functions as a real-time data streaming platform, acting as the nervous system that connects our on-chain logic to our off-chain backend services. Our Local Currency Smart Contract on Etherlink emits a specific event once a transaction is verified and ready for fiat payout. Goldsky continuously monitors the blockchain for these events, ensuring that our NusaPay Backend/API receives this signal instantly and reliably. This robust event-driven architecture is critical for the on-chain to off-chain bridge, guaranteeing that the final step of transferring fiat to the employee's bank account is triggered with speed, accuracy, and without any delay.
+**Goldsky** functions as a real-time data streaming platform, acting as the nervous system that connects our on-chain logic to our off-chain backend services. Our Local Currency Smart Contract on Core emits a specific event once a transaction is verified and ready for fiat payout. Goldsky continuously monitors the blockchain for these events, ensuring that our NusaPay Backend/API receives this signal instantly and reliably. This robust event-driven architecture is critical for the on-chain to off-chain bridge, guaranteeing that the final step of transferring fiat to the employee's bank account is triggered with speed, accuracy, and without any delay.
 
 ***
 
@@ -163,13 +163,13 @@ The process begins with the Employer initiating payments using stable digital as
   
 ### **Intelligent Cross-Chain Routing**
 
-For scenarios where the employer's digital assets reside on a different blockchain than our core processing Smart Contract on **Etherlink**, NusaPay employs robust cross-chain interoperability solutions. **Our Payroll Smart Contract** can securely route **USDC via Hyperlane** from an external blockchain to **Etherlink**. This step is handled seamlessly in the background, abstracting blockchain complexities from the employer.
+For scenarios where the employer's digital assets reside on a different blockchain than our core processing Smart Contract on **Core**, NusaPay employs robust cross-chain interoperability solutions. **Our Payroll Smart Contract** can securely route **USDC via Hyperlane** from an external blockchain to **Core**. This step is handled seamlessly in the background, abstracting blockchain complexities from the employer.
    
 
   
 ### **Localized Digital Asset Representation & Conversion**
 
-Once the digital asset (USDC) arrives on Etherlink, it interacts with our **Local Currency Smart Contract** (e.g., IDRX SC). This smart contract then emits a 'deposit event,' signaling the readiness for conversion and payout.
+Once the digital asset (USDC) arrives on Core, it interacts with our **Local Currency Smart Contract** (e.g., IDRX SC). This smart contract then emits a 'deposit event,' signaling the readiness for conversion and payout.
    
 
   
@@ -201,7 +201,7 @@ The bridge is powered by the symbiotic relationship between our **Local Currency
 
 At the heart of NusaPay's cross-border flexibility lies **Hyperlane**, a core component of our technical stack. Hyperlane enables our platform to operate seamlessly across different blockchain networks, ensuring that our system is not confined to a single chain.
 
-Hyperlane provides a secure and trustless mechanism for our **Payroll Smart Contract** on **Etherlink** to receive digital assets from any supported external blockchain. It does this by facilitating secure message passing and asset bridging without relying on centralized or multi-sig intermediaries. This architectural choice is fundamental for NusaPay as it allows employers to initiate payments from their preferred blockchain, while the core payroll processing logic remains centralized and secure on **Etherlink**.
+Hyperlane provides a secure and trustless mechanism for our **Payroll Smart Contract** on **Core** to receive digital assets from any supported external blockchain. It does this by facilitating secure message passing and asset bridging without relying on centralized or multi-sig intermediaries. This architectural choice is fundamental for NusaPay as it allows employers to initiate payments from their preferred blockchain, while the core payroll processing logic remains centralized and secure on **Core**.
 
 ***
 
@@ -241,7 +241,7 @@ This automated and unified flow makes sending payroll to dozens or even hundreds
 
 # Introduction
 
-Welcome to the NusaPay Developer Documentation. These documents are designed for builders and contributors who want to understand the core mechanics of our protocol. Here, you will find a detailed breakdown of our architecture, smart contract interfaces, off-chain integration points, and tools to get you started with building on NusaPay. Our goal is to provide a comprehensive guide for anyone looking to integrate with or extend our cross-border payment functionality on **Etherlink**.
+Welcome to the NusaPay Developer Documentation. These documents are designed for builders and contributors who want to understand the core mechanics of our protocol. Here, you will find a detailed breakdown of our architecture, smart contract interfaces, off-chain integration points, and tools to get you started with building on NusaPay. Our goal is to provide a comprehensive guide for anyone looking to integrate with or extend our cross-border payment functionality on **Core**.
 
 ***
 
@@ -265,7 +265,7 @@ Welcome to the NusaPay Developer Documentation. These documents are designed for
 
 # Chain Metadata and Addresses by Hyperlane
 
-NusaPay utilizes Hyperlane to enable permissionless cross-chain communication. All metadata and contract addresses presented in this section are generated through Hyperlane’s deployment flow. This includes core components such as the Mailbox, Interchain Security Module (ISM), and relayer infrastructure, configured specifically for NusaPay’s supported chains, particularly Etherlink Testnet.
+NusaPay utilizes Hyperlane to enable permissionless cross-chain communication. All metadata and contract addresses presented in this section are generated through Hyperlane’s deployment flow. This includes core components such as the Mailbox, Interchain Security Module (ISM), and relayer infrastructure, configured specifically for NusaPay’s supported chains, particularly Core Testnet.
 
 ## Chain Metadata
 
@@ -395,7 +395,7 @@ To add the chain to your wallet, you can seamlessly do so via [Chainlist](https:
 
 ***
 
-# Etherlink Testnet
+# Core Testnet
 
 # Chain Metadata and Addresses by Hyperlane
 
@@ -406,17 +406,17 @@ NusaPay utilizes Hyperlane to enable permissionless cross-chain communication. A
 ```yaml
 # yaml-language-server: $schema=../schema.json
 chainId: 128123
-displayName: Etherlinktestnet
+displayName: Coretestnet
 domainId: 128123
 isTestnet: true
-name: etherlinktestnet
+name: Coretestnet
 nativeToken:
   decimals: 18
   name: Tezos
   symbol: XTZ
 protocol: ethereum
 rpcUrls:
-  - http: https://node.ghostnet.etherlink.com
+  - http: https://node.ghostnet.Core.com
 technicalStack: other
 ```
 
@@ -444,11 +444,11 @@ validatorAnnounce: "0x5767e69E6a56BADd04042F79175d6D7c4CEa6D14"
 
 |         Parameter         |                                       Value                                      |
 | :-----------------------: | :------------------------------------------------------------------------------: |
-|          Chain ID         |                                      128123                                      |
-|        Network Name       |                                 Etherlink Testnet                                |
-|          RPC URL          | [https://sepolia-rollup.arbitrum.io/rpc](https://sepolia-rollup.arbitrum.io/rpc) |
-|      Currency Symbol      |                                        XTZ                                       |
-| Block Explorer (Optional) | [https://testnet.explorer.etherlink.com](https://testnet.explorer.etherlink.com) |
+|          Chain ID         |                                      1115                                      |
+|        Network Name       |                                 Core Testnet                                |
+|          RPC URL          | [https://rpc.test.btcs.network](https://rpc.test.btcs.network) |
+|      Currency Symbol      |                                        CORE                                       |
+| Block Explorer (Optional) | [https://scan.test.btcs.network](https://scan.test.btcs.network) |
 
 To add the chain to your wallet, you can seamlessly do so via [Chainlist](https://chainlist.org/chain/84532).
 
