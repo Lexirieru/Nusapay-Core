@@ -30,7 +30,7 @@ export default function FaucetPage() {
         </div>
         
         <div className="relative z-10 min-h-screen flex items-center justify-center">
-          <div className="text-center bg-black/50 backdrop-blur-sm p-8 rounded-lg">
+          <div className="text-center bg-gray-800/20 border-y-1 border-cyan-300 backdrop-blur-sm p-8 rounded-lg">
             <h2 className="text-2xl font-semibold text-white mb-4">
               Please connect your wallet first
             </h2>
@@ -110,7 +110,7 @@ export default function FaucetPage() {
               <h4 className="text-cyan-300 font-semibold mb-2">How it works:</h4>
               <ul className="text-cyan-200 text-sm space-y-1">
                 <li>• Enter the amount of USDC you want to mint</li>
-                <li>• Click "Mint USDC" to receive test tokens</li>
+                <li>• Click &quot;Mint USDC&quot; to receive test tokens</li>
                 <li>• Use these tokens to test the payroll system</li>
                 <li>• Tokens are only for testing purposes</li>
               </ul>
