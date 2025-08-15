@@ -2,7 +2,7 @@
 import SplitText from "@/components/anim/ShinyText/SplitText"
 import Threads from '@/components/Threads'
 import Image from "next/image"
-import { FiTwitter, FiBook } from "react-icons/fi"
+import { FiTwitter, FiBook, FiGithub } from "react-icons/fi"
 
 export default function Homepage() {
   const handleAnimationComplete = () => {
@@ -67,6 +67,15 @@ export default function Homepage() {
       {/* Social Icons - Right Bottom */}
       <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-20">
         <a
+          href="https://github.com/Lexirieru/Nusapay-Core" // ganti link nanti
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 bg-black/50 border border-cyan-500/30 rounded-full hover:scale-110 transition-transform backdrop-blur-sm text-cyan-300"
+        >
+          <FiGithub size={20} />
+        </a>
+
+        <a
           href="https://x.com/nusapayfinance" // ganti link nanti
           target="_blank"
           rel="noopener noreferrer"
@@ -76,7 +85,7 @@ export default function Homepage() {
         </a>
 
         <a
-          href="https://nusapay.gitbook.io/nusapay-on-core/" // ganti link nanti
+          href="https://nusapay.gitbook.io/nusapay-on-core-1/" // ganti link nanti
           target="_blank"
           rel="noopener noreferrer"
           className="p-2 bg-black/50 border border-cyan-500/30 rounded-full hover:scale-110 transition-transform backdrop-blur-sm text-cyan-300"
