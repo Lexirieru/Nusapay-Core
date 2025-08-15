@@ -246,7 +246,7 @@ export function PayrollForm({ onSuccess }: PayrollFormProps) {
                   type="text"
                   value={employee.name}
                   onChange={(e) => updateEmployee(index, 'name', e.target.value)}
-                  className="font-medium text-white bg-transparent border-none outline-none focus:bg-gray-700/50 px-2 py-1 rounded transition-colors"
+                  className="font-medium text-white  border-none outline-none bg-gray-700/50 px-2 py-1 rounded transition-colors"
                   placeholder="Employee Name"
                 />
                 <svg 
