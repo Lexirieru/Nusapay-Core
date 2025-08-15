@@ -460,13 +460,25 @@ To add the chain to your wallet, you can seamlessly do so via [Chainlist](https:
 
 # Protocol Adresses
 
-***
+This is a list of smart contract addresses that have been deployed on a blockchain network, likely Core Testnet, which serves as the foundation for your NusaPay project.
 
-# Oracles
-
-***
-
-# Goldsky
+```
+mockUSDC: 0x3dBFCF9B63F77125351866b7F2B027908810b4C0
+originPayroll: 0x63719d58c13AbaDad02d5390c7f83082F51De805
+domainRoutingIsmFactory: "0x7227073d53bFF54E76CE59fB4D613Ee2Ca58c34D"
+interchainAccountRouter: "0x5558306914971922B959bAe5d7A2424FCD40230f"
+mailbox: "0xA948C6025FfCe453e359f72FAfc916F586e0BF26"
+merkleTreeHook: "0xFaff1551e434eA507964F9F9829E0169880e1C96"
+proxyAdmin: "0xB96F0466Ef59614435FC8baD464BB4483104F2C5"
+staticAggregationHookFactory: "0x3663Ecb2Ce05237edFaB73e93CD47AC2b4739Cd6"
+staticAggregationIsmFactory: "0xcA6c5C30952fEb5a4e3636696514aF557dBC4a7B"
+staticMerkleRootMultisigIsmFactory: "0x4051Fdb3532267f4b55563b005f609a3060aD50F"
+staticMerkleRootWeightedMultisigIsmFactory: "0x56Ec3dCaB08A06C8B3b5986597C3170EbCAb2c80"
+staticMessageIdMultisigIsmFactory: "0x98bF4cDf3520EB26809442aa26098733bAFDeA69"
+staticMessageIdWeightedMultisigIsmFactory: "0x3D13c06941FAA59961A3C77B91A144b93D1D2442"
+testRecipient: "0xC5b81Dc6E5C0551339B16dC8413CFc991eD1aa4D"
+validatorAnnounce: "0xD5E14a80C599fcE96e41f6653c07E26Ea020A180"
+```
 
 ***
 
@@ -476,17 +488,47 @@ To add the chain to your wallet, you can seamlessly do so via [Chainlist](https:
 
 # NusaPay Testnet
 
+**Permissionless Payout Configuration**
+
+NusaPay is permissionless, meaning any employer can initiate a payroll payment with custom parameters. You can freely configure the payout currency and the list of recipients to match your desired use case. This flexibility enables seamless global payment and supports a wide range of needs across supported chains.
+
+**Initiating Payments**
+
+On NusaPay, an employer's funds are sent into our automated payroll smart contract. Each payment and recipient list is managed independently to ensure transaction integrity is contained within its own environment, without affecting other payroll transactions across supported chains.
+
+**Cross-chain Payout Orchestration**
+
+To initiate a payout on NusaPay, an employer’s digital assets must first be sent to our Payroll Smart Contract on Core. This means the payroll is calculated and managed based solely on the funds supplied on Core. When employees need to be paid on other chains like Arbitrum or Base, the funds are securely bridged from Core to the requesting chain.
+
+**Disbursing Payroll**
+
+It is possible to disburse payroll to any supported chain on NusaPay. All payroll smart contracts exist on Core, but payouts can be initiated from other chains like Arbitrum Sepolia or Base Sepolia. The protocol will automatically route the payout securely from Core to your selected chain through NusaPay’s permissionless cross-chain infrastructure.
+
+**Payout Status and Finality**
+
+On NusaPay, all payment flows are initiated from the Core chain. When a payment is successfully processed, the protocol will automatically route the confirmation back to the employer. You can view the total amount paid, and the status of each individual payout in our platform's dashboard. This ensures full transparency and finality for every transaction.
+
+**Mass Payout Capacity and Efficiency**
+
+In NusaPay, our mass payout capacity indicates how much payroll volume our system can handle. By leveraging the low fees and high throughput of the Core chain, our architecture ensures that we can process large volumes of payments efficiently. For example, a single transaction from an employer can trigger payouts to hundreds of employees. This efficiency dramatically reduces the administrative burden and costs associated with global payroll.
+
 ***
 
-# Testnet Faucets
-
-***
 
 # OTHERS
 
 ***
 
 # Links
+
+Github Repositories : 
+https://github.com/Lexirieru/Nusapay-Core
+Video Demo Application : 
+https://youtu.be/RGHR4ex-hIo
+NusaPay Website :
+https://nusapayfinance.vercel.app/
+Presentation :
+https://www.canva.com/design/DAGwL3PfnEA/21pSK16dA0dFAdBJ_U5qig/edit?utm_content=DAGwL3PfnEA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 ***
 
