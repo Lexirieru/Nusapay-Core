@@ -1,8 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { useAccount } from 'wagmi'
-import { useOriginPayroll, useExecutePayroll } from '@/hooks/useOriginPayroll'
+import { useExecutePayroll } from '@/hooks/useOriginPayroll'
 import { useUSDC } from '@/hooks/useUSDC'
 import { CONTRACTS } from '@/lib/contracts'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -46,11 +45,9 @@ const INDONESIAN_BANKS = [
 ]
 
 export function PayrollForm({ onSuccess }: PayrollFormProps) {
-  const { address } = useAccount()
-  const { owner } = useOriginPayroll()
   const { executePayroll, isLoading: isExecuting } = useExecutePayroll()
   const { balance, approveUSDC, isApproving } = useUSDC()
-  const { addPendingTransaction, refreshHistory } = useTransactionContext()
+  const { refreshHistory } = useTransactionContext()
 
   const [employees, setEmployees] = useState<Employee[]>([
     {
@@ -66,9 +63,6 @@ export function PayrollForm({ onSuccess }: PayrollFormProps) {
 
   const [gasPayment] = useState('0')
   const [isTransferring, setIsTransferring] = useState(false)
-
-  // Check if user is owner
-  const isOwner = address && owner && address.toLowerCase() === owner.toLowerCase()
 
   // Calculate total crypto amount
   const totalCryptoAmount = employees.reduce((sum, emp) => {
@@ -160,7 +154,7 @@ export function PayrollForm({ onSuccess }: PayrollFormProps) {
         transactionHash: 'Transaction submitted successfully',
         totalAmount: totalCryptoAmount,
         employeeCount: employees.length,
-        employees: employees.map((emp, index) => ({
+        employees: employees.map((emp) => ({
           name: emp.name,
           address: emp.address,
           usdcAmount: emp.cryptoAmount,

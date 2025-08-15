@@ -1,5 +1,4 @@
 'use client'
-import { getMe } from "@/utils/auth"
 import SplitText from "@/components/anim/ShinyText/SplitText"
 import Threads from '@/components/Threads'
 import Image from "next/image"

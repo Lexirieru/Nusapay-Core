@@ -1,5 +1,4 @@
 import { getDefaultConfig } from '@rainbow-me/rainbowkit'
-import { mainnet, sepolia } from 'wagmi/chains'
 
 // Custom chains untuk Core Testnet dan Base Sepolia
 const coreTestnet = {

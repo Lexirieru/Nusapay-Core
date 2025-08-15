@@ -16,10 +16,6 @@ export default function PayrollPage() {
     setSuccessDetails(details);
     setIsSuccess(true)
   }
-  const handleCloseSuccess = () =>{
-    setIsSuccess(false)
-    setSuccessDetails(null)
-  }
 
   if (!isConnected) {
     return (
