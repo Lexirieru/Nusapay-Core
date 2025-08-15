@@ -153,37 +153,37 @@ NusaPay leverages a sophisticated, yet streamlined, architecture to deliver seam
 
 Our cross-border capability is engineered through a multi-faceted approach, designed for clarity, efficiency, and global reach:
 
-{% stepper %}
-{% step %}
+ 
+  
 ### **Global Digital Asset Ingestion**
 
 The process begins with the Employer initiating payments using stable digital assets such as USDC. This provides a universal entry point, unconstrained by geographical banking limitations.
-{% endstep %}
+   
 
-{% step %}
+  
 ### **Intelligent Cross-Chain Routing**
 
 For scenarios where the employer's digital assets reside on a different blockchain than our core processing Smart Contract on **Etherlink**, NusaPay employs robust cross-chain interoperability solutions. **Our Payroll Smart Contract** can securely route **USDC via Hyperlane** from an external blockchain to **Etherlink**. This step is handled seamlessly in the background, abstracting blockchain complexities from the employer.
-{% endstep %}
+   
 
-{% step %}
+  
 ### **Localized Digital Asset Representation & Conversion**
 
 Once the digital asset (USDC) arrives on Etherlink, it interacts with our **Local Currency Smart Contract** (e.g., IDRX SC). This smart contract then emits a 'deposit event,' signaling the readiness for conversion and payout.
-{% endstep %}
+   
 
-{% step %}
+  
 ### **Off-Chain Integration for Fiat Payout**
 
 Our specialized **Local Currency Backend/API** acts as the crucial bridge to the traditional financial system. This backend constantly monitors the blockchain for conversion and payout signals from the Local Currency Smart Contract. Upon receiving such signals, it triggers an immediate transfer of the corresponding fiat amount (e.g., IDR) from our local banking partners directly into the **Employee's Bank** account.
-{% endstep %}
+   
 
-{% step %}
+  
 ### **Multi-Jurisdictional Scalability**
 
 While examples illustrate a particular flow (e.g., for Indonesian Rupiah), NusaPay's architecture is built for **global extensibility**. The "Local Currency Smart Contract" and "Local Currency Backend/API" components represent a modular design that can be replicated and integrated with local banking infrastructure in numerous other countries. This enables us to support a wide range of local currencies and banking systems, allowing employers to pay employees worldwide through a single, unified platform.
-{% endstep %}
-{% endstepper %}
+   
+   
 
 This integrated flow ensures that employers can initiate international payroll efficiently with digital assets, while employees receive their salaries directly in their local bank accounts, bridging the gap between blockchain and traditional finance for global remuneration. Our architecture is designed to be extensible, supporting various local currency representations and banking integrations to scale our cross-border reach.
 
@@ -213,25 +213,25 @@ This section describes the end-to-end user journey, highlighting how NusaPay sim
 2. Smart Contract Orchestration:&#x20;
 3. Efficiency at Scale: This automated and unified flow makes sending payroll to dozens or even hundreds of employees in different countries as simple as one action. It eliminates the manual work, high fees, and reconciliation headaches associated with traditional methods, providing companies with a scalable and cost-effective solution for their global workforce.
 
-{% stepper %}
-{% step %}
+ 
+  
 **Employer Experience**
 
 An employer begins by logging into NusaPay's platform, where they can easily upload a list of employees and their payroll details. With a single click and a single transaction in USDC, the employer initiates a mass payment to all employees, regardless of their country of residence.
-{% endstep %}
+   
 
-{% step %}
+  
 **Smart Contract Orchestration**
 
 Our Payroll Smart Contract acts as the central hub for this process. It processes the mass payment data, triggers the necessary cross-chain transfers (via Hyperlane if needed), and then initiates the conversion and payout logic for each individual employee, all within a single, atomic, and verifiable process.
-{% endstep %}
+   
 
-{% step %}
+  
 **Efficiency at Scale**
 
 This automated and unified flow makes sending payroll to dozens or even hundreds of employees in different countries as simple as one action. It eliminates the manual work, high fees, and reconciliation headaches associated with traditional methods, providing companies with a scalable and cost-effective solution for their global workforce.
-{% endstep %}
-{% endstepper %}
+   
+   
 
 ***
 
