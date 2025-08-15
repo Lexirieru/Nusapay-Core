@@ -4,6 +4,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import { Navbar } from '@/components/Navbar'
+import { TransactionNotification } from '@/components/TransactionNotification'
+import { RpcStatusIndicator } from '@/components/RpcStatusIndicator'
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,6 +27,8 @@ export default function RootLayout({
       <body className={poppins.className + " bg-[#000000] text-white"}>
         <Providers>
           <Navbar />
+          <TransactionNotification />
+          <RpcStatusIndicator />
           {children}
         </Providers>
       </body>

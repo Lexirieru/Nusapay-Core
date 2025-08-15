@@ -6,6 +6,7 @@ import { useOriginPayroll, useExecutePayroll } from '@/hooks/useOriginPayroll'
 import { useUSDC } from '@/hooks/useUSDC'
 import { CONTRACTS } from '@/lib/contracts'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTransactionContext } from '@/contexts/TransactionContext'
 
 interface Employee {
   name: string
@@ -49,6 +50,7 @@ export function PayrollForm({ onSuccess }: PayrollFormProps) {
   const { owner } = useOriginPayroll()
   const { executePayroll, isLoading: isExecuting } = useExecutePayroll()
   const { balance, approveUSDC, isApproving } = useUSDC()
+  const { addPendingTransaction, refreshHistory } = useTransactionContext()
 
   const [employees, setEmployees] = useState<Employee[]>([
     {
@@ -145,7 +147,7 @@ export function PayrollForm({ onSuccess }: PayrollFormProps) {
       const bankAccounts = employees.map(emp => `${emp.bankName}:${emp.bankAccount}`)
 
       console.log('Executing payroll...')
-      const result = await executePayroll({
+      await executePayroll({
         args: [employeeAddresses, cryptoAmounts, fiatAmounts, currencies, bankAccounts],
         value: BigInt((parseFloat(gasPayment) * 1e18).toString())
       })
@@ -155,7 +157,7 @@ export function PayrollForm({ onSuccess }: PayrollFormProps) {
 
       // Set success details and call the onSuccess callback
       const successDetails = {
-        transactionHash: result?.hash || 'N/A',
+        transactionHash: 'Transaction submitted successfully',
         totalAmount: totalCryptoAmount,
         employeeCount: employees.length,
         employees: employees.map((emp, index) => ({
@@ -171,6 +173,11 @@ export function PayrollForm({ onSuccess }: PayrollFormProps) {
       
       onSuccess(successDetails);
       setIsTransferring(false)
+      
+      // Refresh transaction history after a delay to allow blockchain to update
+      setTimeout(() => {
+        refreshHistory()
+      }, 5000)
       
     } catch (error) {
       console.error('Error in payroll execution:', error)
