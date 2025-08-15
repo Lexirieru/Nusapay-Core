@@ -1,10 +1,14 @@
 'use client'
-
 import { getMe } from "@/utils/auth"
+// import SplitText from "@/components/anim/SplitText"
+import SplitText from "@/components/anim/ShinyText/SplitText"
 import Image from "next/image"
 import Threads from '@/components/Threads'
 
 export default function Homepage() {
+  const handleAnimationComplete =() =>{
+    console.log('All letters done')
+  }
   return (
     <div className="relative h-fit w-full overflow-hidden">
       
@@ -39,9 +43,28 @@ export default function Homepage() {
         />
 
         {/* Subtitle */}
-        <p className="text-cyan-400 text-sm sm:text-base md:text-lg font-medium mb-10">
-          The First Cross-Chain Cross Border Payment using Hyperlane on Core
-        </p>
+        {/* <p className="text-cyan-400 text-sm sm:text-base md:text-lg font-medium mb-10">
+          
+        </p> */}
+        
+        <SplitText
+          text="The First Cross-Chain Cross Border Payment using Hyperlane on Core"
+  className="text-2xl mb-3 font-semibold text-center"
+  delay={75}
+  duration={0.1}
+  ease="power3.out"
+  splitType="chars"
+  from={{ opacity: 0, y: 40 }}
+  to={{ opacity: 1, y: 0 }}
+  threshold={0.1}
+  rootMargin="-100px"
+  textAlign="center"
+  onLetterAnimationComplete={handleAnimationComplete}  
+          
+      />
+
+        
+        
 
         {/* Button */}
         <button
