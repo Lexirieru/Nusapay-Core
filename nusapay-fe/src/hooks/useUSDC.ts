@@ -11,8 +11,10 @@ export function useUSDC() {
     address: CONTRACTS.coreTestnet.mockUSDC,
     abi: mockUSDC,
     functionName: 'balanceOf',
-    args: [address],
-    enabled: !!address
+    args: address ? [address] : undefined,
+    query: {
+      enabled: !!address
+    }
   })
 
   // Mint USDC

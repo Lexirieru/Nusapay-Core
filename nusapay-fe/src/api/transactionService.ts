@@ -128,8 +128,8 @@ class TransactionService {
         try {
           const payrollId = event.args?.[0] as string
           const totalRecipients = Number(event.args?.[1] || 0)
-          const totalCryptoAmount = ethers.formatUnits(event.args?.[2] as bigint || 0n, 6) // USDC has 6 decimals
-          const totalFiatAmount = (event.args?.[3] as bigint || 0n).toString()
+          const totalCryptoAmount = ethers.formatUnits(event.args?.[2] as bigint || BigInt(0), 6) // USDC has 6 decimals
+          const totalFiatAmount = (event.args?.[3] as bigint || BigInt(0)).toString()
           const timestamp = Number(event.args?.[4] || 0)
 
           // Get transaction receipt with retry and fallback
@@ -163,7 +163,7 @@ class TransactionService {
               bankAccounts: details.bankAccounts,
               status: receipt?.status === 1 ? 'SUCCESS' : receipt ? 'FAILED' : 'PENDING',
               gasUsed: receipt?.gasUsed?.toString(),
-              gasPrice: receipt?.effectiveGasPrice?.toString()
+              gasPrice: undefined
             })
           }
         } catch (error) {
@@ -244,8 +244,8 @@ class TransactionService {
         blockNumber: receipt.blockNumber,
         timestamp: block.timestamp,
         totalRecipients: Number(parsedBatchSent?.args?.[1] || 0),
-        totalCryptoAmount: ethers.formatUnits(parsedBatchSent?.args?.[2] as bigint || 0n, 6),
-        totalFiatAmount: (parsedBatchSent?.args?.[3] as bigint || 0n).toString(),
+                    totalCryptoAmount: ethers.formatUnits(parsedBatchSent?.args?.[2] as bigint || BigInt(0), 6),
+            totalFiatAmount: (parsedBatchSent?.args?.[3] as bigint || BigInt(0)).toString(),
         employees: parsedBatchDetails?.args?.[1] as string[] || [],
         cryptoAmounts: (parsedBatchDetails?.args?.[2] as bigint[] || []).map(amount => ethers.formatUnits(amount, 6)),
         fiatAmounts: (parsedBatchDetails?.args?.[3] as bigint[] || []).map(amount => amount.toString()),
@@ -253,7 +253,7 @@ class TransactionService {
         bankAccounts: parsedBatchDetails?.args?.[5] as string[] || [],
         status: receipt.status === 1 ? 'SUCCESS' : 'FAILED',
         gasUsed: receipt.gasUsed?.toString(),
-        gasPrice: receipt.effectiveGasPrice?.toString()
+        gasPrice: undefined
       }
     } catch (error) {
       console.error('Error fetching transaction by hash:', error)

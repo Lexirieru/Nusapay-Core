@@ -1,5 +1,5 @@
 import { ethers } from "ethers";
-import payrollABI from "@/abi/payrollABI.json"
+import { originPayroll } from "@/abis/originPayroll"
 
 export interface PriceFeedData {
   fromCurrency: string;
@@ -16,7 +16,7 @@ export interface SmartContractResponse {
 
 const SMART_CONTRACT_CONFIG = {
   address: process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || "",
-  abi:  payrollABI,
+  abi:  originPayroll,
   networkId: process.env.NEXT_PUBLIC_NETWORK_ID || "4202",
 };
 
@@ -44,8 +44,8 @@ export const initializeWeb3 = async () => {
       }
       
       // Validate ABI
-      if (!SMART_CONTRACT_CONFIG.abi || SMART_CONTRACT_CONFIG.abi.length === 0) {
-        throw new Error('Contract ABI is empty or not provided');
+      if (!SMART_CONTRACT_CONFIG.abi) {
+        throw new Error('Contract ABI is not provided');
       }
       
       const contract = new ethers.Contract(

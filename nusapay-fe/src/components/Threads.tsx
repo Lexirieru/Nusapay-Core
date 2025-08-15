@@ -135,7 +135,7 @@ const Threads: React.FC<ThreadsProps> = ({
   ...rest
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const animationFrameId = useRef<number>();
+  const animationFrameId = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -180,7 +180,6 @@ const Threads: React.FC<ThreadsProps> = ({
     window.addEventListener("resize", resize);
     resize();
 
-    // eslint-disable-next-line prefer-const
     let currentMouse = [0.5, 0.5];
     let targetMouse = [0.5, 0.5];
 
