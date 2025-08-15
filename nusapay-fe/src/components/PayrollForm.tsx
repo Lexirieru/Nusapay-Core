@@ -8,6 +8,7 @@ import { CONTRACTS } from '@/lib/contracts'
 import { motion, AnimatePresence } from 'framer-motion'
 
 interface Employee {
+  name: string
   address: string
   cryptoAmount: string
   fiatAmount: string
@@ -47,6 +48,7 @@ export function PayrollForm() {
 
   const [employees, setEmployees] = useState<Employee[]>([
     {
+      name: 'Name',
       address: '',
       cryptoAmount: '',
       fiatAmount: '',
@@ -78,6 +80,7 @@ export function PayrollForm() {
   // Add new employee row
   const addEmployee = () => {
     setEmployees([...employees, {
+      name: `Name ${employees.length + 1}`,
       address: '',
       cryptoAmount: '',
       fiatAmount: '',
@@ -156,7 +159,7 @@ export function PayrollForm() {
         totalAmount: totalCryptoAmount,
         employeeCount: employees.length,
         employees: employees.map((emp, index) => ({
-          name: `Employee ${index + 1}`,
+          name: emp.name,
           address: emp.address,
           usdcAmount: emp.cryptoAmount,
           fiatAmount: emp.fiatAmount,
@@ -230,7 +233,29 @@ export function PayrollForm() {
         {employees.map((employee, index) => (
           <div key={index} className="border border-gray-700/50 rounded-lg p-4 mb-4 bg-gray-800/30 backdrop-blur-sm">
             <div className="flex justify-between items-center mb-3">
-              <h4 className="font-medium text-white">Employee {index + 1}</h4>
+              {/* <h4 className="font-medium text-white">Employee {index + 1}</h4> */}
+              <div className="flex items-center space-x-2">
+                <input
+                  type="text"
+                  value={employee.name}
+                  onChange={(e) => updateEmployee(index, 'name', e.target.value)}
+                  className="font-medium text-white bg-transparent border-none outline-none focus:bg-gray-700/50 px-2 py-1 rounded transition-colors"
+                  placeholder="Employee Name"
+                />
+                <svg 
+                  className="w-4 h-4 text-gray-400" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" 
+                  />
+                </svg>
+              </div>
               {employees.length > 1 && (
                 <button
                   onClick={() => removeEmployee(index)}
